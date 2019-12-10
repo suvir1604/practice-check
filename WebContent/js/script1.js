@@ -1,13 +1,13 @@
-Function validate()
+function validate()
 {
-	var name=document.forms["Form"]["name"].value
-	var price=document.forms["Form"]["price"].value
-	var date=document.forms["Form"]["date"].value
-	if (name =="") {
+	var name=document.forms["Form"]["name"].value;
+	var price=document.forms["Form"]["price"].value;
+	var date=document.forms["Form"]["date"].value;
+	if (name == "") {
 		alert("Title is required");
 		return false;
 	}
-	if (name.length <2) {
+	if (name.length <2 name.length>100) {
 		alert("title should have 2 to 65 characters");
 		return false;
 	}
