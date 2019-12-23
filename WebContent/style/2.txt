@@ -1,0 +1,12 @@
+try{
+			MenuItemDao menuItemDao = new MenuItemDaoCollectionImPl();
+			MenuItem menuItem=menuItemDao.getMenuItem(menuItemId);
+			if(userCarts.containsKey(userId)) {
+				Cart cart=userCarts.get(userId);
+				cart.getMenuItemList().add(menuItem);
+			}else {
+				Cart cart=new Cart();
+				cart.getMenuItemList().add(menuItem);
+				userCarts.put(userId,cart);
+			}
+		}
