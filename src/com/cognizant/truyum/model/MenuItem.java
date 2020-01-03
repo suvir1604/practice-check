@@ -5,7 +5,7 @@ import java.util.Date;
 import com.cognizant.truyum.util.DateUtil;
 
 public class MenuItem {
-	private long Id;
+	private long id;
 	private String name;
 	private float price;
 	private boolean active;
@@ -18,10 +18,10 @@ public class MenuItem {
 		// TODO Auto-generated constructor stub
 	}
 
-	public MenuItem(long Id, String name, float price, boolean active, Date dateofLaunch, String category,
+	public MenuItem(long id, String name, float price, boolean active, Date dateofLaunch, String category,
 			boolean freeDelivery) {
 		super();
-		this.Id = Id;
+		this.id = id;
 		this.name = name;
 		this.price = price;
 		this.active = active;
@@ -31,11 +31,11 @@ public class MenuItem {
 	}
 
 	public long getId() {
-		return Id;
+		return id;
 	}
 
-	public void setId(long Id) {
-		this.Id = Id;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -90,7 +90,7 @@ public class MenuItem {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (int) (Id ^ (Id >>> 32));
+		result = prime * result + (int) (id ^ (id >>> 32));
 		return result;
 	}
 
@@ -103,7 +103,7 @@ public class MenuItem {
 		if (getClass() != obj.getClass())
 			return false;
 		MenuItem other = (MenuItem) obj;
-		if (Id != other.Id)
+		if (id != other.id)
 			return false;
 		return true;
 	}

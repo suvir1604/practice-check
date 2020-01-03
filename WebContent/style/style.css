@@ -11,7 +11,7 @@ footer{
         background-color: #909199;
       }
 div{
-  	height: 250px;
+  	height: 350px;
 	margin-bottom:780px;
     	}
 #title{
@@ -29,28 +29,28 @@ div{
 	float:right;
   	margin-right:50px;
 	background-color: #909199;
-	color: #ffffff;
-	}
+	color: #ffffff;  
+	} 
 h1,table{
-	margin-left: 250px;
+	margin-left: 120px;
 	}
 h3{
-	margin-left: 250px;
+	margin-left: 250px; 
 	color: #1fdb48;
 }
 h4{
 	margin-left: 250px;
-	color: #8f929c;
-}
+	color: #8f929c; 
+} 
 .al-left{
 	text-align: left;
-	width: 80px;
+	width: 100px;  
 	}
 .al-right{
 	text-align: right;
-	width: 80px;
+	width: 100px;  
 	 }
 .al-mid{
 	text-align: centre;
-	width: 80px;
+	width: 100px; 
 }
