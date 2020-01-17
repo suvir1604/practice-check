@@ -65,20 +65,18 @@ public class CartDaoSqlImpl implements CartDao {
 					"where cart.ct_us_id=?;"; 
 			PreparedStatement pstatement=con.prepareStatement(query);
 			/*pstatement.setLong(1, 1);*/
-		}catch(Exception e) { 
-			e.printStackTrace();  
-			
-		}finally { 
-			try {
-				con.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} 
-        return cart.getMenuItemList();
-		}
-
-
+			}catch(Exception e) { 
+				e.printStackTrace(); 
+				
+			}finally { 
+				try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			return cart.getMenuItemList(); 
 		
 	}
 
