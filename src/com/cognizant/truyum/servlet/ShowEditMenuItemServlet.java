@@ -1,6 +1,7 @@
 package com.cognizant.truyum.servlet;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.Date;
 
@@ -43,7 +44,7 @@ public class ShowEditMenuItemServlet extends HttpServlet {
 			request.setAttribute("menuItem", menuItem);
 			RequestDispatcher rd = request.getRequestDispatcher("edit-menu-item.jsp");
 			rd.forward(request, response);
-		} catch (ParseException e) {
+		} catch (ParseException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

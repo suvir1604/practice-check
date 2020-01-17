@@ -1,5 +1,6 @@
 package com.cognizant.truyum.dao;
 
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.List;
 
@@ -7,19 +8,19 @@ import com.cognizant.truyum.model.MenuItem;
 
 public class CartDaoCollectionImplTest {
 
-	public static void main(String[] args) throws CartEmptyException {
+	public static void main(String[] args) throws CartEmptyException, SQLException {
 		testaddCartItem();
 		testgetallCartItems();
 		testRemoveCartItem();
 
 	}
 
-	private static void testaddCartItem() throws CartEmptyException {
+	private static void testaddCartItem() throws CartEmptyException, SQLException {
 		CartDao cartDao = new CartDaoCollectionImpl();
 		cartDao.addCartItem(1,2l);
 		cartDao.addCartItem(1,4l);
 		cartDao.addCartItem(1,1l);
-		cartDao.addCartItem(2,3l);
+		cartDao.addCartItem(2,3l); 
 
 		List<MenuItem> menuItemListCustomer = cartDao.getallCartItems(1);
 		System.out.println("User Added Cart List for CheckOut");
@@ -29,7 +30,7 @@ public class CartDaoCollectionImplTest {
 
 	}
 
-	private static void testgetallCartItems() throws CartEmptyException {
+	private static void testgetallCartItems() throws CartEmptyException, SQLException {
 		CartDao cartDao = new CartDaoCollectionImpl();
 		List<MenuItem> menuItemListCustomer = cartDao.getallCartItems(1);
 		System.out.println("getAllCartItems");
@@ -39,7 +40,7 @@ public class CartDaoCollectionImplTest {
 
 	}
 
-	public static void testRemoveCartItem() throws CartEmptyException {
+	public static void testRemoveCartItem() throws CartEmptyException, SQLException {
 		CartDao cartDao = new CartDaoCollectionImpl();
 		System.out.println("Item List for customer after remove");
 		try {

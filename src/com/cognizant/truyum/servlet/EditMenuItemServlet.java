@@ -3,6 +3,7 @@ package com.cognizant.truyum.servlet;
 import java.text.*;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.Date;
 
@@ -42,7 +43,6 @@ public class EditMenuItemServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
@@ -57,25 +57,27 @@ public class EditMenuItemServlet extends HttpServlet {
 			String launch = request.getParameter("date");
 			SimpleDateFormat f = new SimpleDateFormat("dd/MM/yyyy");
 			Date result;
-			result = f.parse(launch);
+			result = f.parse(launch); 
 			
 			
 			String category = request.getParameter("main Course");
 			boolean freeDelivery = Boolean.parseBoolean(request.getParameter("freeDelivery"));
-           
+			
+            try {
 			MenuItem m = new MenuItem(id, name, price, active, result, category, freeDelivery);
 			MenuItemDao menuItemDao = new MenuItemDaoCollectionImPl();
-			
-			menuItemDao.ModifyMenuItem(m);
+		    menuItemDao.ModifyMenuItem(m);
 			request.setAttribute("msg", "menu Items Added succesfully");
 			RequestDispatcher rd = request.getRequestDispatcher("edit-menu-item-status.jsp");
 			rd.forward(request, response);
-	} catch (ParseException e) {
+	} catch (ParseException  | SQLException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
+		}
+}
+
 
 		
-	}
-	}
+
 

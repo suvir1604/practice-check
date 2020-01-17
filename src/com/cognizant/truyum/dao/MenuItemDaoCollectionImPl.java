@@ -37,7 +37,7 @@ public class MenuItemDaoCollectionImPl implements MenuItemDao {
 
 	@Override
 	public List<MenuItem> getMenuItemListCustomer() {
-		List<MenuItem> CustList = new ArrayList();
+		List<MenuItem> CustList = new ArrayList<>();
 		Date today = new Date();
 
 		for (MenuItem x : menuItemList) {
