@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cognizant.truyum.dao.MenuItemDao;
 import com.cognizant.truyum.dao.MenuItemDaoCollectionImPl;
+import com.cognizant.truyum.dao.MenuItemDaoSqlImpl;
 import com.cognizant.truyum.model.MenuItem;
 import com.cognizant.truyum.util.DateUtil;
 
@@ -65,7 +66,7 @@ public class EditMenuItemServlet extends HttpServlet {
 			
             try {
 			MenuItem m = new MenuItem(id, name, price, active, result, category, freeDelivery);
-			MenuItemDao menuItemDao = new MenuItemDaoCollectionImPl();
+			MenuItemDao menuItemDao = new MenuItemDaoSqlImpl();
 		    menuItemDao.ModifyMenuItem(m);
 			request.setAttribute("msg", "menu Items Added succesfully");
 			RequestDispatcher rd = request.getRequestDispatcher("edit-menu-item-status.jsp");

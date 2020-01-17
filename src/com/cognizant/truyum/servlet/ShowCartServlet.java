@@ -1,6 +1,7 @@
 package com.cognizant.truyum.servlet;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -47,7 +48,7 @@ public class ShowCartServlet extends HttpServlet {
 			request.setAttribute("total", tot);
 			RequestDispatcher rd = request.getRequestDispatcher("cart.jsp");
 			rd.forward(request, response);
-		} catch (CartEmptyException e) {
+		} catch (CartEmptyException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
